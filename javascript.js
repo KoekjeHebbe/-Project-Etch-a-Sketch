@@ -1,6 +1,7 @@
 const container = document.querySelector("#container");
-let amount = 0;
-generateGrid(amount);
+let amount = 256;
+let side = '60px';
+generateGrid(amount,side);
 
 function changeColor(e){
     e.target.classList.add("hover");
@@ -15,7 +16,6 @@ function clicked (){
     console.log(amount)
     clearGrid();
     let side = `${960/amountPerSide}px`;
-    console.log(side);
     generateGrid(amount,side);
     //changeDivAtt(side);
 }
@@ -27,7 +27,6 @@ function generateGrid (amount,side){
     divke.addEventListener("mouseover", changeColor);
     divke.style.width = side;
     divke.style.height = side;
-    console.log(side);
     container.appendChild(divke);
     }
 }
@@ -36,9 +35,4 @@ function clearGrid(){
     while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
-}
-
-function changeDivAtt(side){
-    document.getElementsByClassName("grid").style.width = side;
-    console.log(side);
 }
