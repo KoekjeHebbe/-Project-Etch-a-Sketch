@@ -1,10 +1,12 @@
 const container = document.querySelector("#container");
 let amount = 256;
 let side = '60px';
+let bness = 1;
 generateGrid(amount,side);
 
 function changeColor(e){
-    e.target.classList.add("hover");
+    e.target.style.backgroundColor = "#" + randColor();
+    changeBrightness(e);
 }
 
 function clicked (){
@@ -27,6 +29,7 @@ function generateGrid (amount,side){
     divke.addEventListener("mouseover", changeColor);
     divke.style.width = side;
     divke.style.height = side;
+    divke.style.filter = "brightness(1)";
     container.appendChild(divke);
     }
 }
@@ -35,4 +38,43 @@ function clearGrid(){
     while (container.firstChild) {
         container.removeChild(container.firstChild);
       }
+}
+
+function randColor(){
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
+
+function changeBrightness(e){
+    bness = e.target.style.filter;
+    if (bness === "brightness(1)"){
+        e.target.style.filter = "brightness(0.9)";
+    }
+    else if (bness === "brightness(0.9)"){
+        e.target.style.filter = "brightness(0.8)";
+    }
+    else if (bness === "brightness(0.8)"){
+        e.target.style.filter = "brightness(0.7)";
+    }
+    else if (bness === "brightness(0.7)"){
+        e.target.style.filter = "brightness(0.6)";
+    }
+    else if (bness === "brightness(0.6)"){
+        e.target.style.filter = "brightness(0.5)";
+    }
+    else if (bness === "brightness(0.5)"){
+        e.target.style.filter = "brightness(0.4)";
+    }
+    else if (bness === "brightness(0.4)"){
+        e.target.style.filter = "brightness(0.3)";
+    }
+    else if (bness === "brightness(0.3)"){
+        e.target.style.filter = "brightness(0.2)";
+    }
+    else if (bness === "brightness(0.2)"){
+        e.target.style.filter = "brightness(0.1)";
+    }
+    else if (bness === "brightness(0.1)"){
+        e.target.style.filter = "brightness(0.0)";
+    }
 }
