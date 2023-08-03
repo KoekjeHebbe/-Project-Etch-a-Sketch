@@ -21,7 +21,7 @@ function clicked (){
 }
 
 function generateGrid (amount,side){
-    for (let a = 0; amount < 256; amount++){
+    for (let a = 0; a < amount; a++){
     const divke = document.createElement("div");
     divke.classList.add("grid");
     divke.addEventListener("mouseover", changeColor);
