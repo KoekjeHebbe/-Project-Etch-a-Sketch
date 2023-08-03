@@ -1,0 +1,23 @@
+.grid {
+    box-sizing: border-box;
+    border: solid;
+    border-width: 0.1px;
+    border-color: rgb(170, 107, 51);
+    background: peachpuff;
+    height: 60px;
+  }
+#container {
+    height: 960px;
+    width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hover {
+    background-color: rgb(255, 115, 0)!important;
+}
+
+button {
+width: auto;
+height: auto;
+margin: 10px;
+}
